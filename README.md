@@ -1,13 +1,13 @@
 # WP Rest Api Demo Theme
 
-# Install
+## Install
 
 `$ npm install`
 
-# Build
+## Build
 
 `$ grunt build`
 
-# Develop
+## Develop
 
 `$ grunt`
