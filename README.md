@@ -1,2 +1,9 @@
-# wp-rest-api-demo-theme
-WordPress Rest API demo theme
+# WP Rest Api Demo Theme
+
+# Build
+
+`$ grunt build`
+
+# Develop
+
+`$ grunt`
