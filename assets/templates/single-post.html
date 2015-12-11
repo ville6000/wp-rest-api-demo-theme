@@ -1,4 +1,8 @@
 <section class="single-post" ng-if="post">
+    <figure class="entry-figure">
+        <img ng-src="{{post.thumbnails.large}}" class="img-responsive post-thumbnail">
+    </figure>
+
     <h1>{{post.title.rendered}}</h1>
 
     <div ng-bind-html="post.content.rendered"></div>
