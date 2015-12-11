@@ -66,14 +66,14 @@ function slug_register_thumbnails() {
 }
 
 function slug_get_thumbnails( $object, $field_name, $request ) {
-	$thumb         = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'thumbnail' );
-	$thumbnail_url = $thumb['0'];
+	$medium         = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'medium' );
+	$medium_url = $medium['0'];
 
 	$large     = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'large' );
 	$large_url = $large['0'];
 
 	return array(
-		'thumbnail' => $thumbnail_url,
+		'medium' => $medium_url,
 		'large'     => $large_url,
 	);
 }

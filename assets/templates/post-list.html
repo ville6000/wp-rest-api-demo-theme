@@ -2,6 +2,10 @@
     <div class="posts-container">
         <div class="post-item" ng-repeat="post in posts">
             <article class="post">
+                <a ng-href="#/post/{{post.id}}">
+                    <img ng-src="{{post.thumbnails.medium}}" class="img-responsive post-item-thumbnail">
+                </a>
+
                 <h1 class="post-title">
                     <a ng-href="#/post/{{post.id}}">
                         {{post.title.rendered}}
