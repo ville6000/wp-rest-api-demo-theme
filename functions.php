@@ -66,7 +66,7 @@ function slug_register_thumbnails() {
 }
 
 function slug_get_thumbnails( $object, $field_name, $request ) {
-	$medium         = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'medium' );
+	$medium     = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'medium' );
 	$medium_url = $medium['0'];
 
 	$large     = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'large' );
@@ -74,6 +74,6 @@ function slug_get_thumbnails( $object, $field_name, $request ) {
 
 	return array(
 		'medium' => $medium_url,
-		'large'     => $large_url,
+		'large'  => $large_url,
 	);
 }
