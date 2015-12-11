@@ -52,3 +52,28 @@ function slug_get_siglings( $object, $field_name, $request ) {
 		'prev' => $prev_post->ID,
 	);
 }
+
+add_action( 'rest_api_init', 'slug_register_thumbnails' );
+function slug_register_thumbnails() {
+	register_api_field( 'post',
+		'thumbnails',
+		array(
+			'get_callback'    => 'slug_get_thumbnails',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+
+function slug_get_thumbnails( $object, $field_name, $request ) {
+	$thumb         = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'thumbnail' );
+	$thumbnail_url = $thumb['0'];
+
+	$large     = wp_get_attachment_image_src( get_post_thumbnail_id( $object->id ), 'large' );
+	$large_url = $large['0'];
+
+	return array(
+		'thumbnail' => $thumbnail_url,
+		'large'     => $large_url,
+	);
+}
